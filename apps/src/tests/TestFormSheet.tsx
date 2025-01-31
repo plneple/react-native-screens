@@ -43,20 +43,12 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="FormSheet" component={FormSheet} options={{
           presentation: 'formSheet',
-          sheetAllowedDetents: [0.5, 1.0],
+          sheetAllowedDetents: "fitToContents",
           sheetCornerRadius: 8,
           sheetLargestUndimmedDetentIndex: 'last',
           contentStyle: {
             backgroundColor: 'lightblue',
           },
-          unstable_sheetFooter: () => {
-            return (
-              <View style={{ height: 64, backgroundColor: 'red' }}>
-                <Text>Footer</Text>
-                <Button title="Just click me" onPress={() => console.log('Footer button clicked')} />
-              </View>
-            );
-          }
         }}/>
       </Stack.Navigator>
     </NavigationContainer>
